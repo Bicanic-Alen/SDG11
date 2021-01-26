@@ -15,7 +15,7 @@ router.get('/sdg11.1', function (req, res, next) {
         function foundTitle(err){
             if (err) console.log("connesione al db non riuscita");
             else{
-                const collection = client.db("SDG11").collection("SDG11 Goals");
+                const collection = client.db("SDG11").collection("SDG_Goals11");
                 collection.find({ 'Target': '11.1' }).toArray(callBackQuery);
             }
 
@@ -26,6 +26,96 @@ router.get('/sdg11.1', function (req, res, next) {
             client.close();
         }
 }); 
+
+router.get('/sdg11.5', function (req, res, next) {
+    console.log(req.params); //Leggo i parametri passati all'url
+    title = req.params.title;
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    client.connect(foundTitle);
+        
+        function foundTitle(err){
+            if (err) console.log("connesione al db non riuscita");
+            else{
+                const collection = client.db("SDG11").collection("SDG_Goals11");
+                collection.find({ 'Target': '11.5' }).toArray(callBackQuery);
+            }
+
+        }  
+        function callBackQuery(err, result){
+            if (err) console.log(err.message);
+            else res.send(result);
+            client.close();
+        }
+}); 
+
+router.get('/sdg11.6', function (req, res, next) {
+    console.log(req.params); //Leggo i parametri passati all'url
+    title = req.params.title;
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    client.connect(foundTitle);
+        
+        function foundTitle(err){
+            if (err) console.log("connesione al db non riuscita");
+            else{
+                const collection = client.db("SDG11").collection("SDG_Goals11");
+                collection.find({ 'Target': '11.6' }).toArray(callBackQuery);
+            }
+
+        }  
+        function callBackQuery(err, result){
+            if (err) console.log(err.message);
+            else res.send(result);
+            client.close();
+        }
+});
+
+router.get('/sdg11.1', function (req, res, next) {
+    console.log(req.params); //Leggo i parametri passati all'url
+    title = req.params.title;
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    client.connect(foundTitle);
+        
+        function foundTitle(err){
+            if (err) console.log("connesione al db non riuscita");
+            else{
+                const collection = client.db("SDG11").collection("SDG_Goals11");
+                collection.find({ 'Target': '11.1' }).toArray(callBackQuery);
+            }
+
+        }  
+        function callBackQuery(err, result){
+            if (err) console.log(err.message);
+            else res.send(result);
+            client.close();
+        }
+}); 
+
+router.get('/sdg11.b', function (req, res, next) {
+    console.log(req.params); //Leggo i parametri passati all'url
+    title = req.params.title;
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    client.connect(foundTitle);
+        
+        function foundTitle(err){
+            if (err) console.log("connesione al db non riuscita");
+            else{
+                const collection = client.db("SDG11").collection("SDG_Goals11");
+                collection.find({ 'Target': '11.b' }).toArray(callBackQuery);
+            }
+
+        }  
+        function callBackQuery(err, result){
+            if (err) console.log(err.message);
+            else res.send(result);
+            client.close();
+        }
+}); 
+
+
+
+
+
+
 
 
 module.exports = router;
