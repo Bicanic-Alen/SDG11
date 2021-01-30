@@ -8,6 +8,9 @@ import { Sgd115Component } from './sgd115/sgd115.component';
 import { Sgd116Component } from './sgd116/sgd116.component';
 import { Sgd11bComponent } from './sgd11b/sgd11b.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,8 @@ import { Sgd11bComponent } from './sgd11b/sgd11b.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
