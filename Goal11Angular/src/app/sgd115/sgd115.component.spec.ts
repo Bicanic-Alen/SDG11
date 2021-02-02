@@ -2,9 +2,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Sgd115Component } from './sgd115.component';
 
+
+
+
 describe('Sgd115Component', () => {
   let component: Sgd115Component;
   let fixture: ComponentFixture<Sgd115Component>;
+
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -22,4 +26,7 @@ describe('Sgd115Component', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+
 });

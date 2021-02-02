@@ -1,3 +1,5 @@
 <div class="card">
-  <h1>DSG111</h1>
+  <input type="text" #newquery>
+  <button type="submit" (click)="submit(newquery)">submit</button>
+  <p>{{results |json}}</p>
 </div>

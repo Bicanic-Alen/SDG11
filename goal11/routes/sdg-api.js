@@ -6,9 +6,9 @@ const MongoClient = require('mongodb').MongoClient; //Importo la libreria mongod
 const uri = 'mongodb+srv://alen_bicanic:KPgZbP7MWt061Quk@cluster1.8ojbw.mongodb.net/Cluster1?retryWrites=true&w=majority'
 
 /* GET users listing. */
-router.get('/sdg11.1', function (req, res, next) {
+router.get('/sdg11.1/:geo', function (req, res, next) {
     console.log(req.params); //Leggo i parametri passati all'url
-    title = req.params.title;
+    y = req.params.geo;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(foundTitle);
         
@@ -16,7 +16,7 @@ router.get('/sdg11.1', function (req, res, next) {
             if (err) console.log("connesione al db non riuscita");
             else{
                 const collection = client.db("SDG11").collection("SDG_Goals11");
-                collection.find({ 'Target': '11.1' }).toArray(callBackQuery);
+                collection.find({$and:[{Target:'11.1'},{GeoAreaName:y}]}).toArray(callBackQuery);
             }
 
         }  
