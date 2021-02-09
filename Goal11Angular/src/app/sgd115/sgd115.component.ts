@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ChartData } from '../chardata.model';
 
 import { GoogleChartInterface } from 'ng2-google-charts';
 import { Observable } from 'rxjs';
@@ -29,7 +30,7 @@ export class Sgd115Component implements OnInit {
 
 
   public pieChart: GoogleChartInterface = {
-  chartType: 'PieChart',
+  chartType: 'LineChart',
   dataTable: [
     ['Task', 'Hours per Day'],
     ['Work',     11],

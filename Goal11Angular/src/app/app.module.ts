@@ -10,6 +10,7 @@ import { Sgd11bComponent } from './sgd11b/sgd11b.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    Ng2GoogleChartsModule
+    Ng2GoogleChartsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

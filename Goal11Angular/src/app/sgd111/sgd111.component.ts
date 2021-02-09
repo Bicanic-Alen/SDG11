@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Sdg11Service } from '../sdg11.service';
-
+import {Location} from '@angular/common'
 import { ChartData } from '../chardata.model';
+import { ActivatedRoute } from '@angular/router';
+import { GoogleChartInterface } from 'ng2-google-charts';
 
 @Component({
   selector: 'app-sgd111',
@@ -15,9 +17,10 @@ export class Sgd111Component {
   obsSDG: Observable<Object>;
   results: any;
   dati = [];
-  constructor(public sdg11: Sdg11Service) {
 
-  }
+  constructor(public sdg11: Sdg11Service,
+              private route: ActivatedRoute,
+              private location: Location) {}
 
   submit(query: HTMLInputElement): void {
 
@@ -26,9 +29,29 @@ export class Sgd111Component {
     }
     this.query = query.value;
     this.obsSDG = this.sdg11.sdg11_1(this.query);
-    this.obsSDG.subscribe((data) => { this.results = data; console.log(this.results) });
+    this.obsSDG.subscribe(this.getData);
   }
 
+
+  getData = (data) => {
+    console.log(data);
+    this.dati.push(['TimePeriod', 'Value']);
+    for (var i of data)
+    {
+      this.dati.push([i['TimePeriod'], i['Value']]);
+    }
+    console.log(this.dati);
+    this.LineChart.dataTable = this.dati;
+  }
+
+
+
+  public LineChart: GoogleChartInterface = {
+  chartType: 'ColumnChart',
+  dataTable: undefined,
+  //firstRowIsData: true,
+  options: {'TimePeriod': 'Value'},
+};
 
 
 

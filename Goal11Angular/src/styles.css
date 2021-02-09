@@ -15,14 +15,17 @@ ul {
     top: 0;
     left: 0;
     list-style-type: none;
+    width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #89e8dd33;
+    background-color: #00acbf;
+    height: 6vh;
+    z-index: 3;
   }
 
   li {
-    float: right;
+    float: left;
   }
 
   li a {
@@ -56,10 +59,12 @@ ul {
 
 .head
 {
+    margin-top:10vh;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    z-index: 1;
 }
 
 
@@ -71,12 +76,12 @@ h1
 
 h2
 {
-    font-size: 42px;
+    font-size: 32px;
 }
 
 h3
 {
-    font-size: 38px;
+    font-size: 25px;
 }
 
 
@@ -114,6 +119,9 @@ h3
 
 
 .card {
+  position: absolute;
+  top:5vh;
+  left: 15%;
   background-color: #ffffff;
   width: 70%;
   height: 70vh;
