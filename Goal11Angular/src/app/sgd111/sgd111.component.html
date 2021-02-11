@@ -1,5 +1,20 @@
+<div class="blur">
+
+</div>
+
+
 <div class="card">
+  <p>
   <input type="text" #newquery>
-  <button type="submit" (click)="submit(newquery)">submit</button>
+  <button class="material-icons" type="submit" (click)="submit(newquery)">search</button>
+  </p>
   <google-chart *ngIf="LineChart.dataTable" [data]="LineChart"></google-chart>
+</div>
+
+<div id="c1" class="circle">
+
+</div>
+
+<div id="c2" class="circle">
+
 </div>
