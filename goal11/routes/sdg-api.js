@@ -27,9 +27,9 @@ router.get('/sdg11.1/:geo', function (req, res, next) {
         }
 }); 
 
-router.get('/sdg11.5', function (req, res, next) {
+router.get('/sdg11.5/:geo', function (req, res, next) {
     console.log(req.params); //Leggo i parametri passati all'url
-    title = req.params.title;
+    y = req.params.geo;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(foundTitle);
         
@@ -37,7 +37,7 @@ router.get('/sdg11.5', function (req, res, next) {
             if (err) console.log("connesione al db non riuscita");
             else{
                 const collection = client.db("SDG11").collection("SDG_Goals11");
-                collection.find({ 'Target': '11.5' }).toArray(callBackQuery);
+                collection.find({$and:[{Target:'11.5'},{GeoAreaName:y}]}).toArray(callBackQuery);
             }
 
         }  
@@ -48,9 +48,9 @@ router.get('/sdg11.5', function (req, res, next) {
         }
 }); 
 
-router.get('/sdg11.6', function (req, res, next) {
-    console.log(req.params); //Leggo i parametri passati all'url
-    title = req.params.title;
+router.get('/sdg11.6/:geo', function (req, res, next) {
+     console.log(req.params); //Leggo i parametri passati all'url
+     y = req.params.geo;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(foundTitle);
         
@@ -58,7 +58,7 @@ router.get('/sdg11.6', function (req, res, next) {
             if (err) console.log("connesione al db non riuscita");
             else{
                 const collection = client.db("SDG11").collection("SDG_Goals11");
-                collection.find({ 'Target': '11.6' }).toArray(callBackQuery);
+                collection.find({$and:[{Target:'11.6'},{GeoAreaName:y}]}).toArray(callBackQuery);
             }
 
         }  
@@ -71,9 +71,9 @@ router.get('/sdg11.6', function (req, res, next) {
 
 
 
-router.get('/sdg11.b', function (req, res, next) {
+router.get('/sdg11.b/:geo', function (req, res, next) {
     console.log(req.params); //Leggo i parametri passati all'url
-    title = req.params.title;
+     y = req.params.geo;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(foundTitle);
         

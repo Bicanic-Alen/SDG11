@@ -1,6 +1,13 @@
 <div class="blur">
 
 </div>
+
+
 <div class="card">
-<google-chart [data]="pieChart"></google-chart>
+  <h1>Numero di persone affette da disastri</h1>
+  <p>
+  <input type="text" #newquery>
+  <button class="material-icons" type="submit" (click)="submit(newquery)">search</button>
+  </p>
+  <google-chart *ngIf="LineChart.dataTable" [data]="LineChart"></google-chart>
 </div>

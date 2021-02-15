@@ -77,6 +77,7 @@ h1
 h2
 {
     font-size: 32px;
+    font-weight: bold;
 }
 
 h3
@@ -87,34 +88,23 @@ h3
 
 .desc
 {
-    width: 70%;
+
+    width: 80%;
     text-align:justify;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
+}
+
+.card h1
+{
+  font-size:56px;
 }
 
 
 .desc h2
 {
     text-align: center;
-}
-
-.desc .left
-{
-    position: relative;;
-    width: 45%;
-    left: 0px;
-    float: left;
-    margin-top: 50px;
-}
-
-.desc .right
-{
-    position: relative;
-    width: 45%;
-    right: 0px;
-    float: right;
-    margin-top: 50px;
 }
 
 
